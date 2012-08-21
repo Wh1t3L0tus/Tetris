@@ -1,15 +1,15 @@
 
 public class Coordinate {
-	public float x;
-	public float y;
+	public int x;
+	public int y;
 	
-	public Coordinate(float x, float y) {
+	public Coordinate(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 	
 	public Coordinate() {
-		this(0f, 0f);
+		this(0, 0);
 	}
 	
 	public Coordinate(Coordinate c) {

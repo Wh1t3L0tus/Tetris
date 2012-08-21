@@ -20,6 +20,10 @@ public class Block {
 		return blank;
 	}
 	
+	public void setBlank(boolean b) {
+		blank = b;
+	}
+	
 	public void setTexture(Image texture) {
 		this.texture = texture;
 	}
