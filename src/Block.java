@@ -28,8 +28,8 @@ public class Block {
 		this.texture = texture;
 	}
 	
-	public void render(float x, float y) {
-		texture.draw(x, y);
+	public void render(Coordinate c) {
+		texture.draw(c.x, c.y);
 	}
 	
 	
