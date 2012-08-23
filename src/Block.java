@@ -16,13 +16,15 @@ public class Block {
 		this.blank = blank;
 	}
 	
-	public boolean isBlank() {
+	public boolean getBlank() {
 		return blank;
 	}
 	
 	public void setBlank(boolean b) {
 		blank = b;
 	}
+	
+	
 	
 	public void setTexture(Image texture) {
 		this.texture = texture;
