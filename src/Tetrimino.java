@@ -52,12 +52,36 @@ public abstract class Tetrimino {
 		this.setTexture(b);
 	}
 	
-	public void setList(ArrayList<Coordinate> list) {
-		
+	public void setBlockList(ArrayList<Coordinate> list) {
+		blockList = list;
 	}
 	
-	public ArrayList<Coordinate> getList() {
-		return null;
+	public ArrayList<Coordinate> getBlockList() {
+		return blockList;
+	}
+	
+	public void setDlist(ArrayList<Coordinate> list) {
+		dList = list;
+	}
+	
+	public ArrayList<Coordinate> getDlist() {
+		return dList;
+	}
+	
+	public void setLlist(ArrayList<Coordinate> list) {
+		lList = list;
+	}
+	
+	public ArrayList<Coordinate> getLlist() {
+		return lList;
+	}
+	
+	public void setRlist(ArrayList<Coordinate> list) {
+		rList = list;
+	}
+	
+	public ArrayList<Coordinate> getRlist() {
+		return rList;
 	}
 	
 	public abstract void rotate();
