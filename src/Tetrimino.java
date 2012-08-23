@@ -4,11 +4,11 @@ import org.newdawn.slick.Image;
 
 
 public abstract class Tetrimino {
-	private ArrayList<Coordinate> blockList;
-	private ArrayList<Coordinate> dList;
-	private ArrayList<Coordinate> lList;
-	private ArrayList<Coordinate> rList;
-	private int rotationLevel;
+	protected ArrayList<Coordinate> blockList;
+	protected ArrayList<Coordinate> dList;
+	protected ArrayList<Coordinate> lList;
+	protected ArrayList<Coordinate> rList;
+	protected int rotationLevel;
 	private Image texture;
 	
 	public Tetrimino(Image texture, int rotationLevel) {
