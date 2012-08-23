@@ -13,6 +13,7 @@ public class Board {
 		this.width = width+2;
 		this.matrix = new ArrayList<Block> (this.width*this.height);
 		/*+2 pour les bordure à droite et à gauche de la matrice, +5 pour la bordure en bas et les quatres lignes en haut où apparetront les tetrimino*/
+		/*initialiser les blocks ...*/
 	}
 	
 	public Board() {
