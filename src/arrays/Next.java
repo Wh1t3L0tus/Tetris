@@ -1,22 +1,21 @@
 package arrays;
 
-import java.util.ArrayList;
 import tetrimino.*;
 import block.Block;
 
 public class Next {
 	
-	private ArrayList<Block> matrix;
+	private Block matrix[];
 	private Tetrimino tetrimino;
 	
 	public Next() {
-		this.matrix = new ArrayList<Block> (4*4);
+		this.matrix = new Block[4*4];
 	}
 	
-	public ArrayList<Block> getMatrix() {
+	public Block[] getMatrix() {
 		return matrix;
 	}
-	public void setMatrix(ArrayList<Block> matrix) {
+	public void setMatrix(Block matrix[]) {
 		this.matrix = matrix;
 	}
 	public Tetrimino getTetrimino() {
