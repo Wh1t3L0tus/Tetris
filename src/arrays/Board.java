@@ -1,4 +1,8 @@
+package arrays;
+
 import java.util.ArrayList;
+import tetrimino.*;
+import block.Block;
 
 
 public class Board {

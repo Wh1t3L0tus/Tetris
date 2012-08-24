@@ -1,6 +1,10 @@
-import java.util.ArrayList;
+package tetrimino;
 
+import java.util.ArrayList;
 import org.newdawn.slick.Image;
+
+import arrays.Board;
+import coordinate.Coordinate;
 
 
 public abstract class Tetrimino {

@@ -1,4 +1,8 @@
+package collision;
+
 import java.util.ArrayList;
+import coordinate.Coordinate;
+import arrays.Board;
 
 
 public class Collision {

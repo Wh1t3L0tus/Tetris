@@ -1,4 +1,8 @@
+package block;
+
+
 import org.newdawn.slick.Image;
+import coordinate.Coordinate;
 
 
 public class Block {
