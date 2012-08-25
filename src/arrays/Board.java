@@ -1,13 +1,12 @@
 package arrays;
 
-import java.util.ArrayList;
 import tetrimino.*;
 import block.Block;
 
 
 public class Board {
 	
-	private ArrayList<Block> matrix;
+	private Block matrix[];
 	private Tetrimino tetrimino;
 	private int width;
 	private int height;
@@ -15,7 +14,7 @@ public class Board {
 	public Board(int width, int height) {
 		this.height = height+5;
 		this.width = width+2;
-		this.matrix = new ArrayList<Block> (this.width*this.height);
+		this.matrix = new Block[this.width*this.height];
 		/*+2 pour les bordure à droite et à gauche de la matrice, +5 pour la bordure en bas et les quatres lignes en haut où apparetront les tetrimino*/
 		/*initialiser les blocks ...*/
 	}
@@ -24,10 +23,10 @@ public class Board {
 		this(10,22);
 	}
 	
-	public ArrayList<Block> getMatrix() {
+	public Block[] getMatrix() {
 		return matrix;
 	}
-	public void setMatrix(ArrayList<Block> matrix) {
+	public void setMatrix(Block[] matrix) {
 		this.matrix = matrix;
 	}
 	public Tetrimino getTetrimino() {
