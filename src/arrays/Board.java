@@ -1,5 +1,6 @@
 package arrays;
 
+import ressource.RessourceManager;
 import tetrimino.*;
 import block.Block;
 
@@ -17,6 +18,18 @@ public class Board {
 		this.matrix = new Block[this.width*this.height];
 		/*+2 pour les bordure à droite et à gauche de la matrice, +5 pour la bordure en bas et les quatres lignes en haut où apparetront les tetrimino*/
 		/*initialiser les blocks ...*/
+		for (int i = 0; i < this.height; i++) {
+			for (int j = 0; j < this.width; j++) {
+				if (i == height - 1 && (i == 0 || i == this.height - 1))
+					this.matrix[i * this.width + j] = new Block(false);
+				else if (i == 0 || i == this.height - 1) {
+					this.matrix[i * this.width] = new Block(false);
+					this.matrix[i * this.width + this.height] = new Block(false);
+				}
+				else
+					this.matrix[i * this.width + j] = new Block(true, RessourceManager.getEmptyBlock());
+			}
+		}
 	}
 	
 	public Board() {
