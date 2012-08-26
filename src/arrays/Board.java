@@ -1,5 +1,6 @@
 package arrays;
 
+import coordinate.Coordinate;
 import ressource.RessourceManager;
 import tetrimino.*;
 import block.Block;
@@ -11,8 +12,10 @@ public class Board {
 	private Tetrimino tetrimino;
 	private int width;
 	private int height;
+	private Coordinate coordinate;
 	
 	public Board(int width, int height) {
+		this.coordinate = new Coordinate();
 		this.height = height+5;
 		this.width = width+2;
 		this.matrix = new Block[this.width*this.height];
@@ -61,5 +64,20 @@ public class Board {
 		this.height = height;
 	}
 	
+	public void setCoordinte(Coordinate c) {
+		coordinate = c;
+	}
+	
+	public Coordinate getCoordinate() {
+		return coordinate;
+	}
+	
+	public void render() {
+		for (int i = 4; i < height - 1; i++) {
+			for (int j = 1; i < width - 1; j++) {
+				matrix[i * width + j].render(new Coordinate(coordinate.x + (j * RessourceManager.getBlueBlock().getWidth()), coordinate.y + (i * RessourceManager.getBlueBlock().getHeight())));
+			}
+		}
+	}
 	
 }
