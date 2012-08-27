@@ -33,6 +33,10 @@ public abstract class Tetrimino {
 		}
 	}
 	
+	public Image getTexture() {
+		return texture;
+	}
+	
 	public void goToLeft(Board b) {
 		this.eraseTexture(b);
 		for (int i = 0; i < blockList.length; i++)
