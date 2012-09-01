@@ -6,7 +6,7 @@ import coordinate.Coordinate;
 
 public class OTetrimino extends Tetrimino {
 	
-	public OTetrimino(Image img) {
+	/*public OTetrimino(Image img) {
 			super(img, 1);
 			super.blockList = new Coordinate[4];
 			super.dList = new Coordinate[4];
@@ -31,5 +31,5 @@ public class OTetrimino extends Tetrimino {
 	@Override
 	public void rotate() {		
 	}
-
+*/
 }
