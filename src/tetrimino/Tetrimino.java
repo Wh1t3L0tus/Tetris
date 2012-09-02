@@ -7,16 +7,15 @@ import coordinate.Coordinate;
 
 
 public abstract class Tetrimino {
-	protected Coordinate blockList[];
-	protected Coordinate dList[];
-	protected Coordinate lList[];
-	protected Coordinate rList[];
+	protected Coordinate blockList[]; /* list of the blocks which the tetrimino is composed of */ 
+	protected Coordinate dList[]; /* list of tetrimino's blocks which are at the bottom of the tetrimino */
+	protected Coordinate lList[]; /* list of tetrimino's blocks which are at the left of the tetrimino */
+	protected Coordinate rList[]; /* list of tetrimino's blocks which are at the right of the tetrimino */
 	protected int rotationLevel;
 	private Image texture;
 	
-	public Tetrimino(Image texture, int rotationLevel) {
+	public Tetrimino(Image texture) {
 		this.texture = texture;
-		this.rotationLevel = rotationLevel;
 	}
 	
 	public void eraseTexture(Board b) {
@@ -91,6 +90,14 @@ public abstract class Tetrimino {
 		return rList;
 	}
 	
+	public int getRotationLevel() {
+		return rotationLevel;
+	}
+
+	public void setRotationLevel(int rotationLevel) {
+		this.rotationLevel = rotationLevel;
+	}
+
 	public abstract void rotate();
 
 }
