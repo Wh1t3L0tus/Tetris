@@ -72,6 +72,56 @@ public class Board {
 		return coordinate;
 	}
 	
+	public boolean isEmptyLine(int y) {
+		boolean isFilled = true;
+		for (int i = 1; i < width - 1 && isFilled; i++) {
+			if (matrix[y * width + i].getBlank() == false)
+				return false;
+		}
+		return true;
+	}
+	
+	/** Copy the content of a line in another line
+	 * 
+	 * @param src the line to copy
+	 * @param dest where to copy the line
+	 */
+	public void copyLine(int src, int dest) {
+		for (int i = 1; i < width - 1; i++) {
+			matrix[dest * width + i] = matrix[src * width + i]; 
+		}
+	}
+	
+	/** Manage the falling of Blocks when lines are empty
+	 * 
+	 */
+	public void managePhysics() { //this function name is bad, any idea ?
+		for (int i = height -1; i >= 4; i--) {
+			if (isEmptyLine(i)) {
+				copyLine(i - 1, i++);
+				for (int j = i - 1; j >= 4; j--) 
+					copyLine(j - 1, j);
+			}
+		}
+	}
+	
+	public void eraseLines() {
+		for (int i = 4; i < height - 1; i++) {
+			boolean isFilled = true;
+			for (int j = 1; j < width - 1 && isFilled; j++) {
+				if (matrix[j * width + i].getBlank() == false)
+					isFilled = false;
+			}
+			if (isFilled) {
+				for (int j = 1; j < width - 1; i++) {
+					matrix[j * width + i].setBlank(true);
+					matrix[j * width + i].setTexture(null);
+				}
+			}
+		}
+		managePhysics();
+	}
+	
 	public void render() {
 		for (int i = 4; i < height - 1; i++) {
 			for (int j = 1; i < width - 1; j++) {
