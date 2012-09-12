@@ -14,7 +14,7 @@ public class RessourceManager {
 	private static Image lightBlueBlock;
 	private static Image orangeBlock;
 	
-	static void loadRessources() throws SlickException {
+	public static void loadRessources() throws SlickException {
 			emptyBlock = new Image("empty_block.png");
 			yellowBlock = new Image("yellow_block.png");
 			greenBlock = new Image("green_block.png");
