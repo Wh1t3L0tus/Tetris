@@ -1,7 +1,6 @@
 package collision;
 
 import tetrimino.*;
-import coordinate.Coordinate;
 import arrays.Board;
 
 

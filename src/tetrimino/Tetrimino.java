@@ -12,10 +12,9 @@ public abstract class Tetrimino {
 	protected Coordinate lList[]; /* list of tetrimino's blocks which are at the left of the tetrimino */
 	protected Coordinate rList[]; /* list of tetrimino's blocks which are at the right of the tetrimino */
 	protected int rotationLevel;
-	private Image texture;
+	protected Image texture;
 	
-	public Tetrimino(Image texture) {
-		this.texture = texture;
+	public Tetrimino() {
 	}
 	
 	public void eraseTexture(Board b) {

@@ -1,13 +1,13 @@
 package tetrimino;
 
-import org.newdawn.slick.Image;
 
+import ressource.RessourceManager;
 import coordinate.Coordinate;
 
 public class ITetrimino extends Tetrimino {
 
-	public ITetrimino(Image img) {
-		super(img);
+	public ITetrimino() {
+		super.texture=RessourceManager.getLightBlueBlock();
 		super.blockList = new Coordinate[4]; //The coordinates correspond to the Next Matrix
 		super.dList = new Coordinate[4];
 		super.rList = new Coordinate[4];
@@ -33,10 +33,49 @@ public class ITetrimino extends Tetrimino {
 		super.rotationLevel = 1;
 	}
 	
-	@Override
 	public void rotate() {
-		// TODO Auto-generated method stub
-
+		if (super.rotationLevel==1){
+			super.blockList[0].x=super.blockList[0].x+2;
+			super.blockList[0].y=super.blockList[0].y+2;
+			super.blockList[1].x=super.blockList[1].x+1;
+			super.blockList[1].y=super.blockList[1].y+1;
+			super.blockList[3].x=super.blockList[3].x-1;
+			super.blockList[3].y=super.blockList[3].y-1;
+			
+			for (int i=0; i<4; i++){
+				super.dList[i]=super.blockList[i];
+			}
+			
+			super.lList[0]=super.blockList[3];
+			super.rList[0]=super.blockList[0];
+			for (int i=1; i<4; i++){
+				super.lList[i]=null;
+				super.rList[i]=null;
+			}
+			
+			super.rotationLevel = 2;
+		}
+		
+		if (super.rotationLevel==2){
+			super.blockList[0].x=super.blockList[0].x-2;
+			super.blockList[0].y=super.blockList[0].y-2;
+			super.blockList[1].x=super.blockList[1].x-1;
+			super.blockList[1].y=super.blockList[1].y-1;
+			super.blockList[3].x=super.blockList[3].x+1;
+			super.blockList[3].y=super.blockList[3].y+1;
+			
+			super.dList[0]=super.blockList[3];
+			for (int i=1; i<4; i++){
+				super.dList[i]=null;
+			}
+			
+			for (int i=0; i<4; i++){
+				super.lList[i]=super.blockList[i];
+				super.rList[i]=super.blockList[i];
+			}
+			
+			super.rotationLevel=1;
+		}
 	}
 
 }

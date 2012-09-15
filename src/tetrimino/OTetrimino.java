@@ -1,13 +1,13 @@
 package tetrimino;
 
-import org.newdawn.slick.Image;
+import ressource.RessourceManager;
 import coordinate.Coordinate;
 
 
 public class OTetrimino extends Tetrimino {
 	
-	public OTetrimino(Image img) {
-			super(img);
+	public OTetrimino() {
+			super.texture=RessourceManager.getYellowBlock();
 			super.blockList = new Coordinate[4]; //The coordinates correspond to the Next Matrix
 			super.dList = new Coordinate[4];
 			super.rList = new Coordinate[4];
