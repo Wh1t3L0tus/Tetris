@@ -110,7 +110,8 @@ public class Board {
 		}
 	}
 	
-	public void eraseLines() {
+	public int eraseLines() {
+		int linesDestroyed = 0;
 		for (int i = 4; i < height - 1; i++) {
 			boolean isFilled = true;
 			for (int j = 1; j < width - 1 && isFilled; j++) {
@@ -118,6 +119,7 @@ public class Board {
 					isFilled = false;
 			}
 			if (isFilled) {
+				linesDestroyed++;
 				for (int j = 1; j < width - 1; i++) {
 					matrix[j * width + i].setBlank(true);
 					matrix[j * width + i].setTexture(null);
@@ -125,6 +127,7 @@ public class Board {
 			}
 		}
 		managePhysics();
+		return linesDestroyed;
 	}
 	
 	public void render() {
