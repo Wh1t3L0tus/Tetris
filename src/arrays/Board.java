@@ -50,6 +50,11 @@ public class Board {
 	}
 	public void setTetrimino(Tetrimino tetrimino) {
 		this.tetrimino = tetrimino;
+		for (int i = 0; i < this.tetrimino.getBlockList().length; i++) {
+			Coordinate c = this.tetrimino.getBlockList()[i];
+			matrix[c.y * this.width + (c.x + 4)].setBlank(false);
+			matrix[c.y * this.width + (c.x + 4)].setTexture(this.tetrimino.getTexture());
+		}
 	}
 	public int getWidth() {
 		return width;
