@@ -11,7 +11,6 @@ import collision.Collision;
 import coordinate.Coordinate;
 
 import arrays.*;
-import tetrimino.*;
 
 public class Tetris {
 	private Score score;
@@ -55,8 +54,8 @@ public class Tetris {
 				board.getTetrimino().goDown(board);
 			 }
 			 else {
-				 //generate a new Tetrimino here (don't forget to deal with Next)
-				 //and also destroy line(s) of Blocks if it's possible
+				 score.increase(board.eraseLines());
+				 board.setTetrimino(nextTetrimino.generateTetrimino());
 			 }
 		}
 		else if (event.isKeyDown(Input.KEY_UP) && !Collision.detectRotation(board, board.getTetrimino())) {
@@ -65,8 +64,8 @@ public class Tetris {
 		
 		if (time - lastTime >= quantum) {
 			if (Collision.detectDown(board, board.getTetrimino())) {
-				//generate a new Tetrimino
-				//and also destroy line(s) of Blocks if it's possible
+				 score.increase(board.eraseLines());
+				 board.setTetrimino(nextTetrimino.generateTetrimino());
 			}
 			else
 				board.getTetrimino().goDown(board);
