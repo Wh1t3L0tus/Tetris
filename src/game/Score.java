@@ -91,7 +91,7 @@ public class Score {
 			actualScore += 100;
 		else if (lineDestroyed == 3)
 			actualScore += 300;
-		else
+		else if (lineDestroyed > 3)
 			actualScore += 1200;
 		
 		rank = NUMBER_OF_TOP_PLAYERS + 1;
