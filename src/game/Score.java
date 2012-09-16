@@ -45,14 +45,21 @@ public class Score {
 		//loading the best scores
 		reader = new BufferedReader(new FileReader(filePath));
 		for (int i = 0; i < NUMBER_OF_TOP_PLAYERS * 2 && reader.ready(); i++) {
-			if (i % 2 == 0)
+			if (i < NUMBER_OF_TOP_PLAYERS) {
 				playersName[i] = reader.readLine();
+			}
 			else {
-				String tmp;
-				if ((tmp = reader.readLine()) == "")
-					playersScore[i] = 0;
-				else
-					playersScore[i] = Integer.valueOf(tmp);
+				String tmp = reader.readLine();
+				if (tmp == "")
+					playersScore[i - NUMBER_OF_TOP_PLAYERS] = 0;
+				else {
+					try {
+						playersScore[i - NUMBER_OF_TOP_PLAYERS] = Integer.valueOf(tmp);
+					}
+					catch (NumberFormatException ne) {
+						playersScore[i - NUMBER_OF_TOP_PLAYERS] = 0;
+					}
+				}
 			}
 		}
 		reader.close();
@@ -76,9 +83,11 @@ public class Score {
 		}
 		
 		writer = new PrintWriter(new FileWriter(filePath));
-		for (int i = 0; i < NUMBER_OF_TOP_PLAYERS; i++) {
-			writer.println(playersName[i]);
-			writer.println(playersScore[i]);
+		for (int i = 0; i < NUMBER_OF_TOP_PLAYERS * 2; i++) {
+			if (i < NUMBER_OF_TOP_PLAYERS)
+				writer.println(playersName[i]);
+			else
+				writer.println(playersScore[i - NUMBER_OF_TOP_PLAYERS]);
 		}
 		writer.close();
 		

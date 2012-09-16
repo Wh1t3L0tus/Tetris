@@ -23,12 +23,8 @@ public class Board {
 		/*initialiser les blocks ...*/
 		for (int i = 0; i < this.height; i++) {
 			for (int j = 0; j < this.width; j++) {
-				if (i == height - 1 && (i == 0 || i == this.height - 1))
+				if (i == this.height - 1 || j == 0 || j == this.width - 1)
 					this.matrix[i * this.width + j] = new Block(false);
-				else if (i == 0 || i == this.height - 1) {
-					this.matrix[i * this.width] = new Block(false);
-					this.matrix[i * this.width + this.height] = new Block(false);
-				}
 				else
 					this.matrix[i * this.width + j] = new Block(true, RessourceManager.getEmptyBlock());
 			}

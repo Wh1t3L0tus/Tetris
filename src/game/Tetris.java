@@ -29,7 +29,7 @@ public class Tetris {
 		board = new Board();
 		nextTetrimino = new Next();
 		try {
-			score = new Score(new Coordinate(500, 200), 20, "font.ttf", "bestscores.txt", Color.white);
+			score = new Score(new Coordinate(500, 200), 20, "font.ttf", "bin/bestscores.txt", Color.white);
 		}		
 		catch (IOException ie) {
 			System.out.println(ie);
