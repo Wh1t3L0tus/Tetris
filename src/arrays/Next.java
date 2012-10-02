@@ -1,6 +1,7 @@
 package arrays;
 
 import coordinate.Coordinate;
+import ressource.RessourceManager;
 import tetrimino.*;
 import block.Block;
 
@@ -14,7 +15,7 @@ public class Next {
 		this.matrix = new Block[4*4];
 		this.coordinate = new Coordinate();
 		for (int i = 0; i < matrix.length; i++)
-			this.matrix[i] = new Block(true);
+			this.matrix[i] = new Block(true, RessourceManager.getEmptyBlock());
 		generateTetrimino();
 	}
 	

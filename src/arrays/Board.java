@@ -128,7 +128,7 @@ public class Board {
 	
 	public void render() {
 		for (int i = 4; i < height - 1; i++) {
-			for (int j = 1; i < width - 1; j++) {
+			for (int j = 1; j < width - 1; j++) {
 				matrix[i * width + j].render(new Coordinate(coordinate.x + (j * RessourceManager.getBlueBlock().getWidth()), coordinate.y + (i * RessourceManager.getBlueBlock().getHeight())));
 			}
 		}
